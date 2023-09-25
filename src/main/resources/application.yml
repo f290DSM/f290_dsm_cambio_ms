@@ -1,0 +1,18 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: cambio-service
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:cambio_db
+    driverClassName: org.h2.Driver
+    username: aluno
+    password: segredo
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      # generate-ddl: false
+      ddl-auto: update
+    show-sql: true
