@@ -1,4 +1,4 @@
-package br.com.fatecararas.f290_dsm_cambio_ms.domain.entities;
+package br.com.fatecararas.f290_dsm_cambio_ms.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
