@@ -7,6 +7,8 @@ import java.util.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -24,11 +26,12 @@ public class ScheduleTasks {
     private RestTemplate restTemplate;
     @Autowired
     private DollarRepository dollarRepository;
+    @Value("${cambio-service.hgbrasil-key}")
+    private String key;
 
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(fixedRate = 600000)
     public void getCurrencies() {
-
-        String url = "https://api.hgbrasil.com/finance?key=90230925";
+        String url = "https://api.hgbrasil.com/finance?key=" + key;
 
         ResponseEntity<DefaultResponse> response = restTemplate
                 .getForEntity(url, DefaultResponse.class);

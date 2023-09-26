@@ -16,3 +16,5 @@ spring:
       # generate-ddl: false
       ddl-auto: update
     show-sql: true
+cambio-service:
+  hgbrasil-key: SUA_CHAVE
